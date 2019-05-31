@@ -117,6 +117,12 @@ def fill_defaults(config):
         cfg = config["docs_conf_py"]
         cfg.setdefault("nengo_logo", "general-full-light.svg")
 
+    # Automatically fill in full version
+    v = config["version"]
+    v["full"] = "{}.{}.{}{}".format(
+        v["major"], v["minor"], v["patch"], "" if v["release"] else ".dev0"
+    )
+
 
 def validate_config(config):
     """
@@ -127,7 +133,11 @@ def validate_config(config):
     config : dict
         Dictionary containing configuration values.
     """
-    mandatory = ["project_name", "pkg_name", "repo_name", "travis_yml.jobs"]
+    mandatory = [
+        "project_name", "pkg_name", "repo_name", "travis_yml.jobs",
+        "version", "version.major", "version.minor", "version.patch",
+        "version.release",
+    ]
 
     for entry in mandatory:
         tmp = config

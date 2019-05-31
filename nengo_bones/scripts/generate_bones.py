@@ -37,7 +37,7 @@ def render_template(ctx, cfg_key, output_file, template_file=None, **kwargs):
     output_file = os.path.join(ctx.obj["output_dir"], output_file)
     with open(output_file, "w") as f:
         f.write(template.render(
-            version=nengo_bones.__version__,
+            bones_version=nengo_bones.__version__,
             **kwargs,
             # pass in the top-level config options as well
             # TODO: separate "top-level" config into its own section?
@@ -138,7 +138,7 @@ def ci_scripts(ctx):
         with open(path, "w") as f:
             f.write(template.render(
                 pkg_name=config["pkg_name"], repo_name=config["repo_name"],
-                version=nengo_bones.__version__, **params))
+                bones_version=nengo_bones.__version__, **params))
 
         # Mark CI script as executable
         st = os.stat(path)
@@ -163,7 +163,7 @@ def travis_yml(ctx):
 
     template = ctx.obj["env"].get_template(".travis.yml.template")
     with open(os.path.join(ctx.obj["output_dir"], ".travis.yml"), "w") as f:
-        f.write(template.render(version=nengo_bones.__version__,
+        f.write(template.render(bones_version=nengo_bones.__version__,
                                 **config["travis_yml"]))
 
 
@@ -261,6 +261,21 @@ def gitignore(ctx):
     """Generate setup.cfg file."""
 
     render_template(ctx, "gitignore", ".gitignore")
+
+
+@main.command()
+@click.pass_context
+def version_py(ctx):
+    """Generate {{ pkg_name }}/version.py file."""
+
+    pkg_name = ctx.obj["config"]["pkg_name"]
+    output_dir = os.path.join(ctx.obj["output_dir"], pkg_name)
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    render_template(ctx, "version_py", "%s/version.py" % (pkg_name,),
+                    template_file="version.py.template")
 
 
 if __name__ == "__main__":

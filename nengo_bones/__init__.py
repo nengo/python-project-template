@@ -18,4 +18,5 @@ all_templated_files = {
     "MANIFEST.in": "manifest_in",
     "setup.cfg": "setup_cfg",
     "setup.py": "setup_py",
+    "version.py": "version_py",  # TODO: how to incorporate pkg_name ?
 }

@@ -13,8 +13,13 @@ def test_find_config():
 
 
 def test_fill_defaults():
-    init_cfg = {"travis_yml": {"jobs": [{"script": "docs-test"}]},
-                "codecov_yml": {}}
+    init_cfg = {
+        "travis_yml": {"jobs": [{"script": "docs-test"}]},
+        "codecov_yml": {},
+        "version": {
+            "major": 3, "minor": 2, "patch": 1, "release": False,
+        }
+    }
     config.fill_defaults(init_cfg)
 
     assert init_cfg["travis_yml"]["python"] == "3.6"
@@ -28,9 +33,15 @@ def test_fill_defaults():
     assert init_cfg["codecov_yml"]["abs_target"] == "auto"
     assert init_cfg["codecov_yml"]["diff_target"] == "100%"
 
+    assert init_cfg["version"]["full"] == "3.2.1.dev0"
+
 
 def test_validate_config():
-    mandatory = ["project_name", "pkg_name", "repo_name", "travis_yml.jobs"]
+    mandatory = [
+        "project_name", "pkg_name", "repo_name", "travis_yml.jobs",
+        "version", "version.major", "version.minor", "version.patch",
+        "version.release",
+    ]
     init_cfg = {"travis_yml": {}}
     for entry in mandatory:
         with pytest.raises(KeyError, match="must define %s" % entry):
@@ -75,6 +86,13 @@ def test_load_config(tmpdir):
         "project_name": "Dummy",
         "pkg_name": "dummy",
         "repo_name": "dummyorg/dummy",
+        "version": {
+            "major": 3,
+            "minor": 2,
+            "patch": 1,
+            "release": False,
+            "full": "3.2.1.dev0",
+        },
         "author": "A Dummy",
         "author_email": "dummy@dummy.com",
         "copyright_start": 0,
@@ -106,6 +124,11 @@ def test_load_config(tmpdir):
         project_name: Dummy
         pkg_name: dummy
         repo_name: dummyorg/dummy
+        version:
+          major: 3
+          minor: 2
+          patch: 1
+          release: false
         author: A Dummy
         author_email: dummy@dummy.com
         copyright_start: 0

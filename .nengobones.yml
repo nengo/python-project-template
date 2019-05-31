@@ -1,6 +1,11 @@
 project_name: Nengo Bones
 pkg_name: nengo_bones
 repo_name: nengo/nengo-bones
+version:
+  major: 0
+  minor: 2
+  patch: 2
+  release: false
 
 description: Tools for managing Nengo projects
 copyright_start: 2018
@@ -160,3 +165,12 @@ docs_conf_py:
 gitignore:
   extra:
     - docs/examples/**/*.py
+
+version_py:
+  extra_doc: |
+    The API of nengo-bones is different from other libraries, so we increment
+    version numbers as follows:
+
+    1. Major version when command line scripts change significantly.
+    2. Minor version when changes require patches to downstream projects.
+    3. Patch version when changes do not require downstream patches.

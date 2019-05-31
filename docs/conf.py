@@ -5,8 +5,6 @@
 
 import os
 
-import nengo_bones
-
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -63,8 +61,8 @@ suppress_warnings = ['image.nonlocal_uri']
 project = "Nengo Bones"
 authors = "Applied Brain Research"
 copyright = "2018-2019 Applied Brain Research"
-version = ".".join(nengo_bones.__version__.split(".")[:2])  # Short X.Y version
-release = nengo_bones.__version__  # Full version, with tags
+version = "0.2"
+release = "0.2.2.dev0"
 
 # -- HTML output
 templates_path = ["_templates"]

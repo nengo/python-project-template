@@ -38,6 +38,11 @@ def test_pr_number(monkeypatch, tmpdir, mode):
             project_name: Nengo Bones
             pkg_name: nengo-bones
             repo_name: %s
+            version:
+              major: 3
+              minor: 2
+              patch: 1
+              release: False
         """ % repo)
 
     if mode == "repo":
