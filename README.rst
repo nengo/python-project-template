@@ -2,10 +2,6 @@
   :target: https://pypi.org/project/nengo-bones
   :alt: Latest PyPI version
 
-.. image:: https://img.shields.io/travis/nengo/nengo-bones/master.svg
-  :target: https://travis-ci.org/nengo/nengo-bones
-  :alt: Travis-CI build status
-
 .. image:: https://img.shields.io/codecov/c/github/nengo/nengo-bones/master.svg
   :target: https://codecov.io/gh/nengo/nengo-bones
   :alt: Test coverage

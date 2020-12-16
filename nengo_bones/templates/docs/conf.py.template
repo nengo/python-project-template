@@ -92,7 +92,10 @@ linkcheck_timeout = 30
 source_suffix = ".rst"
 source_encoding = "utf-8"
 master_doc = "index"
-linkcheck_ignore = [r"http://localhost:\d+"]
+linkcheck_ignore = [
+    r"http://localhost:\d+",
+    r"https?://journals\.plos\.org/.*",  # SSL certificate is broken
+]
 linkcheck_anchors = True
 default_role = "py:obj"
 pygments_style = "sphinx"
