@@ -5,7 +5,7 @@
 {% block install %}
 {{ super() }}
     exe pip install \
-        "sphinx>=3.0.0,<3.1.0" \
+        "sphinx>=3.1.2" \
         "jupyter>=1.0.0" \
         "nbsphinx>=0.2.13" \
         "numpydoc>=0.6.0" \
