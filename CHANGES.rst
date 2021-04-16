@@ -44,6 +44,7 @@ Release History
   in ``setup.py`` is now based on this, if not overridden. (`#140`_)
 - Added support for changing the main branch name with the ``main_branch``
   config option. (`#145`_)
+- Added checksum verification to Codecov upload script. (`#150`_)
 
 **Changed**
 
@@ -90,6 +91,7 @@ Release History
 .. _#140: https://github.com/nengo/nengo-bones/pull/140
 .. _#144: https://github.com/nengo/nengo-bones/pull/144
 .. _#145: https://github.com/nengo/nengo-bones/pull/145
+.. _#150: https://github.com/nengo/nengo-bones/pull/150
 
 0.11.1 (April 13, 2020)
 =======================
