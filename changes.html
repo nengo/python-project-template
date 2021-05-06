@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Release History &#8212; NengoBones 21.5.dev0 docs</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600|Rajdhani:700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.nengo.ai/css/bootstrap.css" type="text/css">
+<style>
+  body .title-bar,
+  body .documentation-source h1:after {
+    background-color: #a8acaf;
+  }
+</style>
+<!-- Google Tag Manager -->
+<script>
+ (function (w, d, s, l, i) {
+   w[l] = w[l] || [];
+   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+   var f = d.getElementsByTagName(s)[0],
+       j = d.createElement(s),
+       dl = l != "dataLayer" ? "&l=" + l : "";
+   j.async = true;
+   j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+   f.parentNode.insertBefore(j, f);
+ })(window, document, "script", "dataLayer", "GTM-KWCR2HN");
+</script>
+<!-- End Google Tag Manager -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<!-- From basic/layout.html -->
+<script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+  
+<script src="_static/underscore.js"></script>
+  
+  
+<script src="_static/doctools.js"></script>
+  
+  
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="API reference" href="reference.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  </head><body class="bg-dark">
+
+<header class="fixed-top header-top shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <a class="navbar-brand" href="https://www.nengo.ai/">
+      <img
+        src="https://www.nengo.ai/design/_images/general-full-light.svg"
+        alt="Nengo"
+        class="logo"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar-collapse"
+      aria-controls="navbar-collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.nengo.ai/">What is Nengo?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.nengo.ai/examples/">Examples</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbar-dropdown-docs"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            href="#"
+            >Documentation</a
+          >
+          <div
+            class="dropdown-menu shadow-lg border-0"
+            aria-labelledby="navbar-dropdown-docs"
+          >
+            
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo/">Nengo core</a>
+            <a class="dropdown-item" href="https://github.com/nengo/nengo-gui/">NengoGUI</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-dl/">NengoDL</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-spa/">NengoSPA</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-extras/">NengoExtras</a>
+            <a class="dropdown-item" href="https://arvoelke.github.io/nengolib-docs/">Nengolib</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/keras-spiking">KerasSpiking</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/pytorch-spiking">PyTorchSpiking</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-fpga/">NengoFPGA</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-loihi/">NengoLoihi</a>
+            <a class="dropdown-item" href="https://labs.nengo.ai/nengo-ocl/">NengoOCL</a>
+            <a class="dropdown-item" href="https://github.com/project-rig/nengo_spinnaker">NengoSpiNNaker</a>
+            <a class="dropdown-item" href="https://github.com/nengo-labs/nengo-mpi">NengoMPI</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/documentation/"
+              >All documentation</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbar-dropdown-community"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            href="#"
+            >Community</a
+          >
+          <div
+            class="dropdown-menu shadow-lg border-0"
+            aria-labelledby="navbar-dropdown-community"
+          >
+            <a class="dropdown-item" href="https://forum.nengo.ai">Forum</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/people/"
+              >People</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/summer-school/"
+              >Summer school</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/contributing/"
+              >Contributing</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/publications/"
+              >Publications</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/videos/"
+              >Videos</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/conduct/"
+              >Code of conduct</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/caa/">CAA</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link btn btn-success btn-sm text-white"
+            href="https://www.nengo.ai/getting-started/"
+            >Getting started</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="main-content gradient-top">
+  <div class="container-fluid">
+    <div class="row"><a class="toggle-sidenav d-block d-md-none" href="#"
+  ><i class="icon-close fa fa-fw fa-arrow-left"></i
+  ><i class="icon-open fa fa-fw fa-arrow-right"></i
+></a>
+<div role="complementary" class="sidenav col-4 col-xl-3 p-0 border-right">
+  <h3 class="pt-5 px-5">
+    <a href="index.html">
+      <img
+        class="img-fluid documentation-image"
+        src="https://www.nengo.ai/design/_images/general-full-light.svg"
+        alt="NengoBones"
+      />
+    </a>
+  </h3>
+<form class="px-5 py-3 my-0 border-bottom" action="search.html" method="get">
+  <div class="form-group form-group-single">
+    <input type="text" name="q" class="form-control" placeholder="Search" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+    <button type="submit" class="btn btn-link">
+      <img src="https://www.nengo.ai/img/icon-search.svg" alt="Go" />
+    </button>
+  </div>
+</form><div class="p-5 toctree">
+  
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">API reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unreleased">20.5 (unreleased)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-13-2020">0.11.1 (April 13, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id22">0.11.0 (April 13, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#march-19-2020">0.10.0 (March 19, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#march-17-2020">0.9.1 (March 17, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#january-28-2020">0.9.0 (January 28, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#january-10-2020">0.8.0 (January 10, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#january-8-2020">0.7.3 (January 8, 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#december-2-2019">0.7.2 (December 2, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#november-14-2019">0.7.1 (November 14, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#november-7-2019">0.7.0 (November 7, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#october-30-2019">0.6.0 (October 30, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#september-3-2019">0.5.0 (September 3, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#august-8-2019">0.4.2 (August 8, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#july-26-2019">0.4.1 (July 26, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id40">0.4.0 (July 26, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#july-19-2019">0.3.0 (July 19, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-24-2019">0.2.1 (May 24, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-15-2019">0.2.0 (May 15, 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-15-2019">0.1.0 (April 15, 2019)</a></li>
+</ul>
+</li>
+</ul>
+
+  
+  </div>
+  
+  <form class="p-5 my-0 border-top">
+    <div class="form-group">
+      <label class="text-gray">Version:</label>
+      <select class="custom-select" onchange="switchVersion(this);">
+        
+        
+        <option selected>latest</option>
+        
+        
+          
+        <option value="v0.11.1/changes.html">
+          v0.11.1
+        </option>
+          
+        
+          
+        <option value="v0.11.0/changes.html">
+          v0.11.0
+        </option>
+          
+        
+          
+        <option value="v0.10.0/changes.html">
+          v0.10.0
+        </option>
+          
+        
+          
+        <option value="v0.9.1/changes.html">
+          v0.9.1
+        </option>
+          
+        
+          
+        <option value="v0.9.0/changes.html">
+          v0.9.0
+        </option>
+          
+        
+          
+        <option value="v0.8.0/changes.html">
+          v0.8.0
+        </option>
+          
+        
+          
+        <option value="v0.7.3/changes.html">
+          v0.7.3
+        </option>
+          
+        
+          
+        <option value="v0.7.2/changes.html">
+          v0.7.2
+        </option>
+          
+        
+          
+        <option value="v0.7.0/changes.html">
+          v0.7.0
+        </option>
+          
+        
+          
+        <option value="v0.6.0/changes.html">
+          v0.6.0
+        </option>
+          
+        
+          
+        <option value="v0.5.0/changes.html">
+          v0.5.0
+        </option>
+          
+        
+          
+        <option value="v0.4.2/changes.html">
+          v0.4.2
+        </option>
+          
+        
+          
+        <option value="v0.4.1/changes.html">
+          v0.4.1
+        </option>
+          
+        
+          
+        <option value="v0.4.0/changes.html">
+          v0.4.0
+        </option>
+          
+        
+          
+        <option value="v0.3.0/changes.html">
+          v0.3.0
+        </option>
+          
+        
+          
+        <option value="v0.2.1/changes.html">
+          v0.2.1
+        </option>
+          
+        
+          
+        <option value="v0.2.0/changes.html">
+          v0.2.0
+        </option>
+          
+        
+          
+        <option value="v0.1.0/changes.html">
+          v0.1.0
+        </option>
+          
+        
+          
+        <option value="v0.0.0/changes.html">
+          v0.0.0
+        </option>
+          
+        
+      </select>
+    </div>
+  </form>
+  
+</div>
+      
+
+      <div class="col-12 col-md-8 col-xl-9">
+        <div class="container">
+          <div class="row">
+            <div class="col-10 offset-1 pb-5 documentation-source" role="main">
+              
+              
+              <div class="admonition note">
+                  <p class="admonition-title">Note</p>
+                  <p>
+                  This documentation is for a development version.
+                  <a href="v0.11.1/changes.html">
+                  Click here for the latest stable release (v0.11.1).
+                  </a>
+                  </p>
+              </div>
+              
+              
+  <div class="section" id="release-history">
+<h1>Release History<a class="headerlink" href="#release-history" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="unreleased">
+<h2>20.5 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added support for new <code class="docutils literal notranslate"><span class="pre">one_page</span></code> option in <code class="docutils literal notranslate"><span class="pre">nengo-sphinx-theme</span></code>. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/101">#101</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">tagmanager_id</span></code> option to <code class="docutils literal notranslate"><span class="pre">docs_conf.py.template</span></code>,
+which will enable Google Tag Manager tracking. This option takes precedence
+over <code class="docutils literal notranslate"><span class="pre">analytics_id</span></code> if both are specified. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/114">#114</a>)</p></li>
+<li><p>Added the <code class="docutils literal notranslate"><span class="pre">bones-format-notebook</span></code> script to apply automated formatting, cleanup,
+and static checking to Jupyter notebooks. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/32">#32</a>)</p></li>
+<li><p>Static script will now check that <code class="docutils literal notranslate"><span class="pre">bones-format-notebook</span></code> has been applied to all
+notebooks in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/32">#32</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">remote-script.sh</span></code> CI script for running other CI scripts on a remote device.
+(<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/124">#124</a>)</p></li>
+<li><p>Added <a class="reference external" href="https://pycqa.github.io/isort/">isort</a> configuration to
+<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and check import order during static checks. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/121">#121</a>)</p></li>
+<li><p>Officially support and test against Python 3.9. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/136">#136</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">skip</span></code> option to codespell config, which can be used to specify files that
+should be ignored. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/138">#138</a>)</p></li>
+<li><p>Added support for projects with type hints through the <code class="docutils literal notranslate"><span class="pre">py_typed</span></code> section. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/140">#140</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">min_python</span></code> option to the main section. The default <code class="docutils literal notranslate"><span class="pre">python_requires</span></code>
+in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is now based on this, if not overridden. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/140">#140</a>)</p></li>
+<li><p>Added support for changing the main branch name with the <code class="docutils literal notranslate"><span class="pre">main_branch</span></code>
+config option. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/145">#145</a>)</p></li>
+<li><p>Added template for <code class="docutils literal notranslate"><span class="pre">version.py</span></code>. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/151">#151</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Restrict pylint version to &lt;2.5 due to issue when the package being checked
+is not installed in the current environment. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/103">#103</a>)</p></li>
+<li><p>Increased minimum <code class="docutils literal notranslate"><span class="pre">black</span></code> version to 20.8b0. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/104">#104</a>)</p></li>
+<li><p>Increased minimum <code class="docutils literal notranslate"><span class="pre">pylint</span></code> version to 2.5.1 (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/32">#32</a>)</p></li>
+<li><p>Documentation <code class="docutils literal notranslate"><span class="pre">[source]</span></code> links now point to GitHub. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/117">#117</a>)</p></li>
+<li><p>Separate tokens, <code class="docutils literal notranslate"><span class="pre">PYPI_TOKEN</span></code> and <code class="docutils literal notranslate"><span class="pre">PYPI_TEST_TOKEN</span></code>, must now be specified
+for deploying to PyPI and TestPyPI, respectively. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/127">#127</a>)</p></li>
+<li><p>Builds for this repository now run on TravisCI.com instead of TravisCI.org. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/130">#130</a>)</p></li>
+<li><p>Drop support for Python 3.5. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/123">#123</a>)</p></li>
+<li><p>Doc script will now install Sphinx&gt;=3.1.2. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/137">#137</a>)</p></li>
+<li><p>Codespell ignore words is now specified via the <code class="docutils literal notranslate"><span class="pre">codespell.ignore_words</span></code> section
+of <code class="docutils literal notranslate"><span class="pre">setup_cfg</span></code> (instead of in the static CI script config). As a result, it will
+now apply to all invocations of codespell (not just from the static script). (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/138">#138</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bones-format-notebook</span> <span class="pre">--check</span></code> will now require that all <code class="docutils literal notranslate"><span class="pre">codespell</span></code> checks pass.
+(<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/138">#138</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Intermittent failures installing miniconda in the remote script have been fixed by
+retrying the miniconda install if it fails. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/130">#130</a>)</p></li>
+<li><p>Fixed an issue in which Codecov would not report on files where a file in a
+deeper folder shares the same name. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/132">#132</a>)</p></li>
+<li><p>Fixed an issue in which CI scripts did not have access to the same configuration
+options as other templates. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/144">#144</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="april-13-2020">
+<h2>0.11.1 (April 13, 2020)<a class="headerlink" href="#april-13-2020" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Rendered documentation will not be uploaded if the html build fails (it will still
+be uploaded if the linkchecker/doctest builds fail). (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/98">#98</a>)</p></li>
+<li><p>Rendered documentation will not be uploaded on cron builds. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/98">#98</a>)</p></li>
+<li><p>Docs script will now clean up the built doc directory before execution, if it exists
+(e.g., because the docs job is being rerun). (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/96">#96</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h2>0.11.0 (April 13, 2020)<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Downstream repos will now be automatically updated when nengo-bones is updated.
+(<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/97">#97</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">slack_notifications</span></code> option to <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> to enable Slack notifications
+for failing builds. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/97">#97</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Will now use <code class="docutils literal notranslate"><span class="pre">nengo-bones</span></code> and <code class="docutils literal notranslate"><span class="pre">nengo-sphinx-theme</span></code> master builds (instead of the
+latest release), to streamline the process of distributing changes to those core
+repos. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/97">#97</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="march-19-2020">
+<h2>0.10.0 (March 19, 2020)<a class="headerlink" href="#march-19-2020" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">autoautosummary_change_modules</span></code> option (for use with
+<code class="docutils literal notranslate"><span class="pre">nengo_sphinx_theme.ext.autoautosummary</span></code>). (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/86">#86</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Docs script will now use <code class="docutils literal notranslate"><span class="pre">nengo_sphinx_theme.ext.backoff</span></code>, which adds
+exponential backoff functionality to Sphinx requests. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/86">#86</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="march-17-2020">
+<h2>0.9.1 (March 17, 2020)<a class="headerlink" href="#march-17-2020" title="Permalink to this headline">¶</a></h2>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Fixed deployment tag conditional check in <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> template. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/83">#83</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="january-28-2020">
+<h2>0.9.0 (January 28, 2020)<a class="headerlink" href="#january-28-2020" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">bones-check</span></code> that TravisCI does now prints diffs for easier
+debugging. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/80">#80</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Fixed an issue with the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> template caused by the new
+Jinja2 release. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/80">#80</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="january-10-2020">
+<h2>0.8.0 (January 10, 2020)<a class="headerlink" href="#january-10-2020" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>The default distribution used in builds is now <code class="docutils literal notranslate"><span class="pre">xenial</span></code>. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/79">#79</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="january-8-2020">
+<h2>0.7.3 (January 8, 2020)<a class="headerlink" href="#january-8-2020" title="Permalink to this headline">¶</a></h2>
+<p><strong>Removed</strong></p>
+<ul class="simple">
+<li><p>Removed coverage.py early starting logic. This is no longer necessary as of Nengo
+3.0 and causes problems with the new coverage.py 5.0 release. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/78">#78</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="december-2-2019">
+<h2>0.7.2 (December 2, 2019)<a class="headerlink" href="#december-2-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Failing to install miniconda in <code class="docutils literal notranslate"><span class="pre">remote.sh</span></code> is no longer considered a build
+error (this can occur, for example, when rerunning a build that already has
+miniconda installed). (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/71">#71</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="november-14-2019">
+<h2>0.7.1 (November 14, 2019)<a class="headerlink" href="#november-14-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added support for <code class="docutils literal notranslate"><span class="pre">nengo_sphinx_theme.ext.redirects</span></code>, which can be used to
+automatically add redirects for renamed documentation pages. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/68">#68</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Added locking to <code class="docutils literal notranslate"><span class="pre">remote.sh</span></code> script to avoid possible race conditions
+during cleanup. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/69">#69</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="november-7-2019">
+<h2>0.7.0 (November 7, 2019)<a class="headerlink" href="#november-7-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added support for <code class="docutils literal notranslate"><span class="pre">sphinx.ext.doctest</span></code>, which can be used to automatically
+test code snippets in docstrings. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/67">#67</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>Updated the <code class="docutils literal notranslate"><span class="pre">black</span></code> version used in <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/67">#67</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="october-30-2019">
+<h2>0.6.0 (October 30, 2019)<a class="headerlink" href="#october-30-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">remote.sh</span></code> CI script template for remotely executing
+commands on an SSH-accessible machine. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/65">#65</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Fixed a crash when a file contained the text “Automatically generated
+by nengo-bones”, but was not present in the config file. (<a class="reference external" href="https://github.com/nengo/nengo-bones/issues/61">#61</a>, <a class="reference external" href="https://github.com/nengo/nengo-bones/pull/66">#66</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="september-3-2019">
+<h2>0.5.0 (September 3, 2019)<a class="headerlink" href="#september-3-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">nengo_simulator</span></code>, <code class="docutils literal notranslate"><span class="pre">nengo_simloader</span></code> and <code class="docutils literal notranslate"><span class="pre">nengo_neurons</span></code>
+options to the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> section of the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> template to
+support testing changes in Nengo 3.0. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/58">#58</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>The default value for <code class="docutils literal notranslate"><span class="pre">pytest.addopts</span></code> in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> has been removed
+because Nengo 3.0 does not require <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">nengo.tests.options</span></code>. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/58">#58</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="august-8-2019">
+<h2>0.4.2 (August 8, 2019)<a class="headerlink" href="#august-8-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">plt_dirname</span></code> option to the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> section of the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>
+template to set the plot directory for pytest-plt. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/52">#52</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">plt_filename_drop</span></code> option to the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> section of the
+<code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> template to set pruning patterns for pytest-plt. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/52">#52</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">rng_salt</span></code> option to the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> section of the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>
+template to set the salt for pytest-rng. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/55">#55</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="july-26-2019">
+<h2>0.4.1 (July 26, 2019)<a class="headerlink" href="#july-26-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">allclose_tolerances</span></code> option to the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> section of the
+<code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> template to set tolerances for pytest-allclose. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/47">#47</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="id40">
+<h2>0.4.0 (July 26, 2019)<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added style guide and release instructions to documentation. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/44">#44</a>)</p></li>
+<li><p>Added templates for <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>
+so downstream repositories can easily adopt Black. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/49">#49</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>We now check that Python source files are autoformatted with Black
+in the <code class="docutils literal notranslate"><span class="pre">static.sh</span></code> script. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/49">#49</a>)</p></li>
+<li><p>Templates will now be autoformatted with Black during the rendering
+process, if Black is installed. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/49">#49</a>)</p></li>
+<li><p>Take advantage of multiprocessing to speed up pylint static checks. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/49">#49</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">E203</span></code> flake8 check and <code class="docutils literal notranslate"><span class="pre">bad-continuation</span></code> pylint check are now
+disabled by default. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/50">#50</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="july-19-2019">
+<h2>0.3.0 (July 19, 2019)<a class="headerlink" href="#july-19-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">nengo_bones.templates</span></code> module was added to consolidate code
+that loads and renders templates. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/45">#45</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code> template has been updated for new versions of
+Nengo Sphinx Theme. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/46">#46</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">static.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">examples.sh</span></code> will now check any notebooks in the
+<code class="docutils literal notranslate"><span class="pre">docs</span></code> folder (not just <code class="docutils literal notranslate"><span class="pre">docs/examples</span></code>). (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/46">#46</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bones-check</span></code> now checks that the content of the generated files
+matches the expected content, rather than relying on version numbers.
+This means most files will not need to be regenerated when new NengoBones
+versions are released, and that <code class="docutils literal notranslate"><span class="pre">bones-check</span></code> will be sensitive to changes
+within a dev version. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/45">#45</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">static.sh</span></code>/<code class="docutils literal notranslate"><span class="pre">examples.sh</span></code> script will no longer fail if there are no
+notebooks in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/46">#46</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="may-24-2019">
+<h2>0.2.1 (May 24, 2019)<a class="headerlink" href="#may-24-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">codespell_ignore_words</span></code> option to <code class="docutils literal notranslate"><span class="pre">static.sh.template</span></code>,
+which is a list of words that <code class="docutils literal notranslate"><span class="pre">codespell</span></code> will ignore. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/35">#35</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">analytics_id</span></code> option to <code class="docutils literal notranslate"><span class="pre">docs_conf.py.template</span></code>,
+which will enable Google Analytics tracking. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/35">#35</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">codespell</span></code> will now ignore <code class="docutils literal notranslate"><span class="pre">_vendor</span></code> directories. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/36">#36</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Fixed an issue with <code class="docutils literal notranslate"><span class="pre">static.sh.template</span></code> in which Python files
+that were not converted from notebooks were deleted. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/16">#16</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="may-15-2019">
+<h2>0.2.0 (May 15, 2019)<a class="headerlink" href="#may-15-2019" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">apt_install</span></code> option that can be set in the <code class="docutils literal notranslate"><span class="pre">jobs</span></code> section to
+<code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">install</span></code> any custom <code class="docutils literal notranslate"><span class="pre">apt</span></code> requirements for a job. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/14">#14</a>)</p></li>
+<li><p>Added templates for <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">CONTRIBUTORS.rst</span></code>,
+<code class="docutils literal notranslate"><span class="pre">LICENSE.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code>, <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">setup.py</span></code> (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/17">#17</a>)</p></li>
+<li><p>Templates will now be automatically loaded from a <code class="docutils literal notranslate"><span class="pre">&lt;repo&gt;/.templates</span></code>
+directory if it exists. When overriding existing templates, the built-in
+templates can be accessed in <code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">extend</span></code> tags with the
+<code class="docutils literal notranslate"><span class="pre">templates/</span></code> prefix. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/17">#17</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">flake8</span></code> to the static check script. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/17">#17</a>)</p></li>
+<li><p>Added the <code class="docutils literal notranslate"><span class="pre">bones-pr-number</span></code> script to predict the next PR number for a
+repository. This helps when writing a changelog entry before a PR has been
+made. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/18">#18</a>)</p></li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li><p>The Python version is now specified by the <code class="docutils literal notranslate"><span class="pre">python</span></code> option (instead of
+<code class="docutils literal notranslate"><span class="pre">python_version</span></code>), for consistency with <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/14">#14</a>)</p></li>
+<li><p>All <code class="docutils literal notranslate"><span class="pre">nengo-bones</span></code> scripts now start with <code class="docutils literal notranslate"><span class="pre">bones-</span></code>, to make them easier
+to find with autocompletion. <code class="docutils literal notranslate"><span class="pre">generate-bones</span></code> is now <code class="docutils literal notranslate"><span class="pre">bones-generate</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">check-bones</span></code> is now <code class="docutils literal notranslate"><span class="pre">bones-check</span></code>. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/18">#18</a>)</p></li>
+</ul>
+<p><strong>Removed</strong></p>
+<ul class="simple">
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">conda</span></code> from the CI setup; all installations should be done
+through <code class="docutils literal notranslate"><span class="pre">pip</span></code> instead. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/14">#14</a>)</p></li>
+<li><p>Removed the <code class="docutils literal notranslate"><span class="pre">--template-dir</span></code> option from the <code class="docutils literal notranslate"><span class="pre">generate-bones</span></code> script;
+use a <code class="docutils literal notranslate"><span class="pre">.templates</span></code> directory instead. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/17">#17</a>)</p></li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul class="simple">
+<li><p>Order of templated dicts should now be deterministic for
+all Python versions. (<a class="reference external" href="https://github.com/nengo/nengo-bones/pull/14">#14</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="april-15-2019">
+<h2>0.1.0 (April 15, 2019)<a class="headerlink" href="#april-15-2019" title="Permalink to this headline">¶</a></h2>
+<p>Initial release of NengoBones!
+Thanks to all of the contributors for making this possible!</p>
+</div>
+</div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><footer class="text-light footer-main gradient-bottom">
+  <p class="small text-center mb-0">
+    <a class="no-hover-line" href="https://appliedbrainresearch.com">
+      <img
+        src="https://appliedbrainresearch.com/img/logo-blue-notext.svg"
+        height="48"
+      />
+    </a>
+    <a href="https://www.nengo.ai/">What is Nengo?</a>
+    <a href="https://www.nengo.ai/examples/">Examples</a>
+    <a href="https://www.nengo.ai/documentation/">Documentation</a>
+    <a href="https://www.nengo.ai/getting-started/">Getting started</a>
+    <a href="https://www.nengo.ai/privacy/">Privacy</a>
+  </p>
+  <p class="small text-center mb-0">&copy; Applied Brain Research</p>
+</footer>
+<script>
+  function switchVersion(select) {
+    var option = select.selectedOptions[0];
+    if (option.hasAttribute("value")) {
+      window.location = option.value;
+    }
+  }
+</script>
+
+<script>
+  var elements = document.querySelectorAll('.sidenav');
+  Stickyfill.add(elements);
+</script>
+<script>
+  ScrollReveal().reveal(".fade-in", {
+      scale: 0.85,
+      duration: 1000,
+      delay: 250,
+      interval: 50
+  });
+</script>
+<script>
+  $('a.toggle-sidenav').on('click', function(e) {
+    e.preventDefault();
+    if ( $(this).hasClass('active') ) {
+      $(this).removeClass('active');
+      $('.sidenav').removeClass('open');
+    } else {
+      $(this).addClass('active');
+      $('.sidenav').addClass('open');
+    }
+  });
+</script>
+<script>
+  var lists = document.querySelectorAll('.toctree ul');
+  lists.forEach((ul) => {
+      ul.classList.add("nav");
+  });
+  var links = document.querySelectorAll('.toctree a');
+  links.forEach((link) => {
+      link.classList.add("nav-link");
+  });
+  $("body").scrollspy({target: ".sidenav"});
+</script>
+  </body>
+</html>
