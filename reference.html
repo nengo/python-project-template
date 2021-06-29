@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API reference &#8212; NengoBones 21.6.dev0 docs</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600|Rajdhani:700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.nengo.ai/css/bootstrap.css" type="text/css">
+<style>
+  body .title-bar,
+  body .documentation-source h1:after {
+    background-color: #a8acaf;
+  }
+</style>
+<!-- Google Tag Manager -->
+<script>
+ (function (w, d, s, l, i) {
+   w[l] = w[l] || [];
+   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+   var f = d.getElementsByTagName(s)[0],
+       j = d.createElement(s),
+       dl = l != "dataLayer" ? "&l=" + l : "";
+   j.async = true;
+   j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+   f.parentNode.insertBefore(j, f);
+ })(window, document, "script", "dataLayer", "GTM-KWCR2HN");
+</script>
+<!-- End Google Tag Manager -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<!-- From basic/layout.html -->
+<script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+  
+<script src="_static/underscore.js"></script>
+  
+  
+<script src="_static/doctools.js"></script>
+  
+  
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Release History" href="changes.html" />
+    <link rel="prev" title="Configuration options" href="examples/configuration.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  </head><body class="bg-dark">
+
+<header class="fixed-top header-top shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <a class="navbar-brand" href="https://www.nengo.ai/">
+      <img
+        src="https://www.nengo.ai/design/_images/general-full-light.svg"
+        alt="Nengo"
+        class="logo"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar-collapse"
+      aria-controls="navbar-collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.nengo.ai/">What is Nengo?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.nengo.ai/examples/">Examples</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbar-dropdown-docs"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            href="#"
+            >Documentation</a
+          >
+          <div
+            class="dropdown-menu shadow-lg border-0"
+            aria-labelledby="navbar-dropdown-docs"
+          >
+            
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo/">Nengo core</a>
+            <a class="dropdown-item" href="https://github.com/nengo/nengo-gui/">NengoGUI</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-dl/">NengoDL</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-spa/">NengoSPA</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-extras/">NengoExtras</a>
+            <a class="dropdown-item" href="https://arvoelke.github.io/nengolib-docs/">Nengolib</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/keras-spiking">KerasSpiking</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/pytorch-spiking">PyTorchSpiking</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-fpga/">NengoFPGA</a>
+            <a class="dropdown-item" href="https://www.nengo.ai/nengo-loihi/">NengoLoihi</a>
+            <a class="dropdown-item" href="https://labs.nengo.ai/nengo-ocl/">NengoOCL</a>
+            <a class="dropdown-item" href="https://github.com/project-rig/nengo_spinnaker">NengoSpiNNaker</a>
+            <a class="dropdown-item" href="https://github.com/nengo-labs/nengo-mpi">NengoMPI</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/documentation/"
+              >All documentation</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbar-dropdown-community"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            href="#"
+            >Community</a
+          >
+          <div
+            class="dropdown-menu shadow-lg border-0"
+            aria-labelledby="navbar-dropdown-community"
+          >
+            <a class="dropdown-item" href="https://forum.nengo.ai">Forum</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.nengo.ai/people/"
+              >People</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/summer-school/"
+              >Summer school</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/contributing/"
+              >Contributing</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/publications/"
+              >Publications</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/videos/"
+              >Videos</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/conduct/"
+              >Code of conduct</a
+            >
+            <a class="dropdown-item" href="https://www.nengo.ai/caa/">CAA</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link btn btn-success btn-sm text-white"
+            href="https://www.nengo.ai/getting-started/"
+            >Getting started</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="main-content gradient-top">
+  <div class="container-fluid">
+    <div class="row"><a class="toggle-sidenav d-block d-md-none" href="#"
+  ><i class="icon-close fa fa-fw fa-arrow-left"></i
+  ><i class="icon-open fa fa-fw fa-arrow-right"></i
+></a>
+<div role="complementary" class="sidenav col-4 col-xl-3 p-0 border-right">
+  <h3 class="pt-5 px-5">
+    <a href="index.html">
+      <img
+        class="img-fluid documentation-image"
+        src="https://www.nengo.ai/design/_images/general-full-light.svg"
+        alt="NengoBones"
+      />
+    </a>
+  </h3>
+<form class="px-5 py-3 my-0 border-bottom" action="search.html" method="get">
+  <div class="form-group form-group-single">
+    <input type="text" name="q" class="form-control" placeholder="Search" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+    <button type="submit" class="btn btn-link">
+      <img src="https://www.nengo.ai/img/icon-search.svg" alt="Go" />
+    </button>
+  </div>
+</form><div class="p-5 toctree">
+  
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-nengo_bones.config"><code class="docutils literal notranslate"><span class="pre">nengo_bones.config</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-nengo_bones.templates"><code class="docutils literal notranslate"><span class="pre">nengo_bones.templates</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Release History</a></li>
+</ul>
+
+  
+  </div>
+  
+  <form class="p-5 my-0 border-top">
+    <div class="form-group">
+      <label class="text-gray">Version:</label>
+      <select class="custom-select" onchange="switchVersion(this);">
+        
+        
+        <option selected>latest</option>
+        
+        
+          
+        <option value="v0.11.1/reference.html">
+          v0.11.1
+        </option>
+          
+        
+          
+        <option value="v0.11.0/reference.html">
+          v0.11.0
+        </option>
+          
+        
+          
+        <option value="v0.10.0/reference.html">
+          v0.10.0
+        </option>
+          
+        
+          
+        <option value="v0.9.1/reference.html">
+          v0.9.1
+        </option>
+          
+        
+          
+        <option value="v0.9.0/reference.html">
+          v0.9.0
+        </option>
+          
+        
+          
+        <option value="v0.8.0/reference.html">
+          v0.8.0
+        </option>
+          
+        
+          
+        <option value="v0.7.3/reference.html">
+          v0.7.3
+        </option>
+          
+        
+          
+        <option value="v0.7.2/reference.html">
+          v0.7.2
+        </option>
+          
+        
+          
+        <option value="v0.7.0/reference.html">
+          v0.7.0
+        </option>
+          
+        
+          
+        <option value="v0.6.0/reference.html">
+          v0.6.0
+        </option>
+          
+        
+          
+        <option value="v0.5.0/reference.html">
+          v0.5.0
+        </option>
+          
+        
+          
+        <option value="v0.4.2/reference.html">
+          v0.4.2
+        </option>
+          
+        
+          
+        <option value="v0.4.1/reference.html">
+          v0.4.1
+        </option>
+          
+        
+          
+        <option value="v0.4.0/reference.html">
+          v0.4.0
+        </option>
+          
+        
+          
+        <option value="v0.3.0/reference.html">
+          v0.3.0
+        </option>
+          
+        
+          
+        <option value="v0.2.1/reference.html">
+          v0.2.1
+        </option>
+          
+        
+          
+        <option value="v0.2.0/reference.html">
+          v0.2.0
+        </option>
+          
+        
+          
+        <option value="v0.1.0/reference.html">
+          v0.1.0
+        </option>
+          
+        
+          
+        <option value="v0.0.0/reference.html">
+          v0.0.0
+        </option>
+          
+        
+      </select>
+    </div>
+  </form>
+  
+</div>
+      
+
+      <div class="col-12 col-md-8 col-xl-9">
+        <div class="container">
+          <div class="row">
+            <div class="col-10 offset-1 pb-5 documentation-source" role="main">
+              
+              
+              <div class="admonition note">
+                  <p class="admonition-title">Note</p>
+                  <p>
+                  This documentation is for a development version.
+                  <a href="v0.11.1/reference.html">
+                  Click here for the latest stable release (v0.11.1).
+                  </a>
+                  </p>
+              </div>
+              
+              
+  <div class="section" id="api-reference">
+<h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#module-nengo_bones.config" title="nengo_bones.config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nengo_bones.config</span></code></a></p></td>
+<td><p>Handles the processing of nengo-bones configuration settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#module-nengo_bones.templates" title="nengo_bones.templates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nengo_bones.templates</span></code></a></p></td>
+<td><p>Handles the processing of nengo-bones templates using jinja2.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="module-nengo_bones.config">
+<span id="nengo-bones-config"></span><h2><code class="docutils literal notranslate"><span class="pre">nengo_bones.config</span></code><a class="headerlink" href="#module-nengo_bones.config" title="Permalink to this headline">¶</a></h2>
+<p>Handles the processing of nengo-bones configuration settings.</p>
+<dl class="py function">
+<dt id="nengo_bones.config.check_list">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">check_list</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L9-L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.check_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that config value is a list.</p>
+<p>This is designed to catch the common error of specifying</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">option</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">value</span>
+</pre></div>
+</div>
+<p>instead of</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">option</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">value</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>cfg</strong><span class="classifier">dict</span></dt><dd><p>Configuration options being checked.</p>
+</dd>
+<dt><strong>key: str</strong></dt><dd><p>Name of configuration value to be checked.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">key</span></code> is in <code class="docutils literal notranslate"><span class="pre">cfg</span></code> and its value is not a list.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.find_config">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">find_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L46-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.find_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the default nengo-bones config file.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>conf_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a></span></dt><dd><p>Path to the default config file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.fill_defaults">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">fill_defaults</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L61-L139"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.fill_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fills in default values in a loaded config (in-place).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing configuration values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.validate_black_config">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">validate_black_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L142-L169"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.validate_black_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates aspects of the config related to Black.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing configuration values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.validate_setup_cfg_config">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">validate_setup_cfg_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L172-L189"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.validate_setup_cfg_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates the <code class="docutils literal notranslate"><span class="pre">setup_cfg</span></code> section of the config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing configuration values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.validate_config">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">validate_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L192-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.validate_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates a populated config dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing configuration values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.validate_ci_config">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">validate_ci_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ci_config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L231-L255"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.validate_ci_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates an entry in the ci_scripts list of a config dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ci_config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing ci_scripts configuration values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.config.load_config">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.config.</span></code><code class="sig-name descname"><span class="pre">load_config</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/config.py#L258-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.config.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads config values from a file and applies defaults/validation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>conf_file</strong><span class="classifier">str</span></dt><dd><p>Filepath for config file (if None, will load the default returned by
+<a class="reference internal" href="#nengo_bones.config.find_config" title="nengo_bones.config.find_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_config</span></code></a>).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing configuration values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-nengo_bones.templates">
+<span id="nengo-bones-templates"></span><h2><code class="docutils literal notranslate"><span class="pre">nengo_bones.templates</span></code><a class="headerlink" href="#module-nengo_bones.templates" title="Permalink to this headline">¶</a></h2>
+<p>Handles the processing of nengo-bones templates using jinja2.</p>
+<dl class="py class">
+<dt id="nengo_bones.templates.BonesTemplate">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">BonesTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L12-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.BonesTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A templated file known to NengoBones.</p>
+<p>The only necessary information is the output filename, relative to the
+<code class="docutils literal notranslate"><span class="pre">templates</span></code> directory, which means that the output filename for the
+Sphinx configuration is <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>. Other attributes are determined
+from the output filename.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>output_file</strong><span class="classifier">str</span></dt><dd><p>Filename for the rendered output file.</p>
+</dd>
+<dt><strong>env</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">jinja2.Environment</span></code></span></dt><dd><p>Initialized jinja environment for loading/rendering templates.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl>
+<dt><strong>env</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">jinja2.Environment</span></code></span></dt><dd><p>Initialized jinja environment for loading/rendering templates.</p>
+</dd>
+<dt><strong>output_file</strong><span class="classifier">str</span></dt><dd><p>Filename for the rendered output file.</p>
+</dd>
+<dt><strong>section</strong><span class="classifier">str</span></dt><dd><p>The heading for the section in the config file containing config
+options specific to the template being rendered.</p>
+</dd>
+<dt><strong>template_file</strong><span class="classifier">str</span></dt><dd><p>Filename for the input template file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="nengo_bones.templates.BonesTemplate.add_render_data">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">add_render_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L59-L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.BonesTemplate.add_render_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register functions that add template-specific render data.</p>
+<p>For example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@nengo_bones</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">BonesTemplate</span><span class="o">.</span><span class="n">add_render_data</span><span class="p">(</span><span class="s2">&quot;my_new_template&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">add_my_new_template_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;attr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;val&quot;</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="nengo_bones.templates.BonesTemplate.get_render_data">
+<code class="sig-name descname"><span class="pre">get_render_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L81-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.BonesTemplate.get_render_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct the <code class="docutils literal notranslate"><span class="pre">data</span></code> that will be used to render this template.</p>
+<p>This method creates a new dictionary so the original <code class="docutils literal notranslate"><span class="pre">config</span></code>
+is not modified. Additionally, certain sections have
+processing done to them in addition to flattening out
+the section to the top-level of the config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">dict</span></dt><dd><p>Dictionary containing configuration values.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>A dictionary that can be passed to <a class="reference internal" href="#nengo_bones.templates.BonesTemplate.render" title="nengo_bones.templates.BonesTemplate.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a> and <a class="reference internal" href="#nengo_bones.templates.BonesTemplate.render_to_file" title="nengo_bones.templates.BonesTemplate.render_to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_to_file</span></code></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="nengo_bones.templates.BonesTemplate.render">
+<code class="sig-name descname"><span class="pre">render</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L110-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.BonesTemplate.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render this template to a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Will be passed on to the <code class="docutils literal notranslate"><span class="pre">template.render</span></code> function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="nengo_bones.templates.BonesTemplate.render_to_file">
+<code class="sig-name descname"><span class="pre">render_to_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L134-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.BonesTemplate.render_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a template to file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rendered shell scripts (files with the <code class="docutils literal notranslate"><span class="pre">.sh</span> <span class="pre">extension</span></code>)
+are automatically marked as executable.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>output_dir</strong><span class="classifier">str</span></dt><dd><p>Directory in which the rendered file should be placed.</p>
+</dd>
+<dt><strong>output_name</strong><span class="classifier">str, optional</span></dt><dd><p>An alternative filename for the rendered file.
+This overrides the class’s internal <code class="docutils literal notranslate"><span class="pre">output_file</span></code> attribute.</p>
+</dd>
+<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Will be passed on to the <code class="docutils literal notranslate"><span class="pre">render</span></code> function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.templates.add_docs_conf_py_data">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">add_docs_conf_py_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L169-L179"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.add_docs_conf_py_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run checks on the docs/conf.py-specific entries in the ‘data’ dict.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.templates.add_travis_data">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">add_travis_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L182-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.add_travis_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add travis.yml-specific entries to the ‘data’ dict.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.templates.add_manifest_data">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">add_manifest_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L195-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.add_manifest_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add MANIFEST.in-specific entries to the ‘data’ dict.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.templates.add_setup_py_data">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">add_setup_py_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L210-L221"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.add_setup_py_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add setup.py-specific entries to the ‘data’ dict.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.templates.add_setup_cfg_data">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">add_setup_cfg_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L224-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.add_setup_cfg_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add setup.cfg-specific entries to the ‘data’ dict.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="nengo_bones.templates.load_env">
+<code class="sig-prename descclassname"><span class="pre">nengo_bones.templates.</span></code><code class="sig-name descname"><span class="pre">load_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/nengo/nengo-bones/blob/master/nengo_bones/templates.py#L245-L267"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nengo_bones.templates.load_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a jinja environment for loading/rendering templates.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><footer class="text-light footer-main gradient-bottom">
+  <p class="small text-center mb-0">
+    <a class="no-hover-line" href="https://appliedbrainresearch.com">
+      <img
+        src="https://appliedbrainresearch.com/img/logo-blue-notext.svg"
+        height="48"
+      />
+    </a>
+    <a href="https://www.nengo.ai/">What is Nengo?</a>
+    <a href="https://www.nengo.ai/examples/">Examples</a>
+    <a href="https://www.nengo.ai/documentation/">Documentation</a>
+    <a href="https://www.nengo.ai/getting-started/">Getting started</a>
+    <a href="https://www.nengo.ai/privacy/">Privacy</a>
+  </p>
+  <p class="small text-center mb-0">&copy; Applied Brain Research</p>
+</footer>
+<script>
+  function switchVersion(select) {
+    var option = select.selectedOptions[0];
+    if (option.hasAttribute("value")) {
+      window.location = option.value;
+    }
+  }
+</script>
+
+<script>
+  var elements = document.querySelectorAll('.sidenav');
+  Stickyfill.add(elements);
+</script>
+<script>
+  ScrollReveal().reveal(".fade-in", {
+      scale: 0.85,
+      duration: 1000,
+      delay: 250,
+      interval: 50
+  });
+</script>
+<script>
+  $('a.toggle-sidenav').on('click', function(e) {
+    e.preventDefault();
+    if ( $(this).hasClass('active') ) {
+      $(this).removeClass('active');
+      $('.sidenav').removeClass('open');
+    } else {
+      $(this).addClass('active');
+      $('.sidenav').addClass('open');
+    }
+  });
+</script>
+<script>
+  var lists = document.querySelectorAll('.toctree ul');
+  lists.forEach((ul) => {
+      ul.classList.add("nav");
+  });
+  var links = document.querySelectorAll('.toctree a');
+  links.forEach((link) => {
+      link.classList.add("nav-link");
+  });
+  $("body").scrollspy({target: ".sidenav"});
+</script>
+  </body>
+</html>
